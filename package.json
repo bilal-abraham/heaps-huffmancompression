@@ -1,0 +1,13 @@
+{
+	"name": "index",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+	"start": "node Main.js"
+	},
+	"keywords": [],
+	"author": "bilal-abraham",
+	"license": "ISC"
+}
