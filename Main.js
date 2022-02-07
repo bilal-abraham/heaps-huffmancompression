@@ -1,13 +1,40 @@
-const myArgs = process.argv.slice(2);
-console.log('myArgs: ', myArgs);
+const arg = process.argv.slice(2);
+arg[1] = Number(arg[1]);
+arg[2] = Number(arg[2]);
+switch (arg[0]) {
+	case '+':
+		console.log(`Result of ${arg[1]} 
+        + ${arg[2]} = ${arg[1] + arg[2]}`);
+		break;
 
-switch (myArgs[0]) {
-	case 'insult':
-		console.log(myArgs[1], 'smells quite badly.');
+	case '*':
+		console.log(`Result of ${arg[1]} 
+        * ${arg[2]} = ${arg[1] * arg[2]}`);
 		break;
-	case 'compliment':
-		console.log(myArgs[1], 'is really cool.');
+
+	case '-':
+		console.log(`Result of ${arg[1]} 
+        - ${arg[2]} = ${arg[1] - arg[2]}`);
 		break;
+
+	case '/':
+		if (arg[2] == 0) {
+			console.log('cannot be divided by zero!!');
+		} else {
+			console.log(`Result of ${arg[1]} 
+            / ${arg[2]} = ${arg[1] / arg[2]}`);
+		}
+		break;
+
+	case '%':
+		if (arg[2] == 0) {
+			console.log('cannot be divided by zero!!');
+		} else {
+			console.log(`Result of ${arg[1]} 
+            % ${arg[2]} = ${arg[1] % arg[2]}`);
+		}
+		break;
+
 	default:
-		console.log('Sorry, that is not something I know how to do.');
+		console.log(`operation cannot be performed!!`);
 }
